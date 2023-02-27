@@ -9,12 +9,21 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
+    id "org.sonarqube" version "3.5.0.2730"
 }
 
+sonarqube {
+  properties {
+    property "sonar.projectKey", "NicolasLeymat_E_Sporter_Gradle"
+    property "sonar.organization", "nicolasleymat"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
+
 
 dependencies {
     // Use JUnit Jupiter for testing.
